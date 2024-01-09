@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  mysql-db-microservices:
+    image: mysql:8.0
+    container_name: mysql-db-microservices
+    environment:
+      MYSQL_DATABASE: studentsDb
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+
+
+  postgres-db-microservices:
+    image: postgres:15
+    container_name: postgres-db-microservices
+    environment:
+      POSTGRES_USER: main
+      POSTGRES_PASSWORD: mainpassword
+      POSTGRES_DB: coursesDB
+    ports:
+      - "5432:5432"
